@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container, Card, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
-import Link from 'gatsby-link'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
@@ -11,11 +10,12 @@ const IndexPage = ({ data }) => {
       <Container className="grid-base">
         {posts.map(({ node: post }) => (
           <Card key={post.id}>
-            <CardBody>
+            <img src={post.frontmatter.attachments} alt={post.frontmatter.title}/>
+            {/*<CardBody>
               <CardTitle><Link to={post.frontmatter.path}>{post.frontmatter.title}</Link></CardTitle>
               <CardSubtitle style={{marginBottom: 10}}>{post.frontmatter.date}</CardSubtitle>
-              <CardText>{post.excerpt}</CardText>
-            </CardBody>
+        <CardText>{post.excerpt}</CardText>
+            </CardBody>*/}
           </Card>
         ))}
       </Container>

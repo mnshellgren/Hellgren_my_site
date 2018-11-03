@@ -126,7 +126,7 @@
     font-family: 'Work Sans', sans-serif; 
     color: #8a8585;
     &:hover {
-      color: #999;
+      color: #404B85;
     }
   }
 }
@@ -163,6 +163,22 @@
   display: inline-block;
   height: 28px;
 }
+.text-backdrop {
+  border: 1.5px solid #fff;
+  display: inline-block;
+  height: 18px;
+  &.active {
+    border: 1.5px solid #fe7d7c;
+    .nav-link {
+      color: #404B85;
+      font-weight: 500;
+    }
+  }
+  .nav-link {
+    position: relative;
+    top: -14px;
+  }
+}
 .text-title {
   position: relative;
   top: -16px;
@@ -186,8 +202,11 @@
 .padding-left-small {
   padding-left: 4px;
 }
+.margin-top-xsmall {
+  margin-top: 3px;
+}
 .margin-top-small {
-  margin-top: 6px;
+  margin-top: 8px;
 }
 // ----------------------------------------------------
 

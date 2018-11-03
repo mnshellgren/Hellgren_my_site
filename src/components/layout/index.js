@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import Navigation from './navigation.js'
 
 // code syntax-highlighting theme
 // feel free to change it to another one
@@ -26,30 +27,36 @@ const TemplateWrapper = ({ children, data }) => {
             <div className="flex-wrapper">
               <div className="title-container">
                 <span className="title-backdrop"><Link to='/' className='text-title'>{data.site.siteMetadata.title}</Link></span>
-                <p className="text-roles padding-left-small margin-top-small">UX thinker <br></br> Web developer <br></br> Hobby photographer</p>
+                <p className="text-roles padding-left-small margin-top-xsmall">UX thinker <br></br> Web developer <br></br> Hobby photographer</p>
                 <p className="text-body padding-left-small margin-top-small"> hej@hellgren.space <br></br>+46730573037</p>
               </div>
 
               <div className="nav-wrapper">
-              <ul className='nav navbar-nav'>
+              <Navigation user={user}/>
+              {/*<ul className='nav navbar-nav'>
                 {user && (
                 <li className='nav-item'>
+                  <span></span>
                   <a href='/admin' className='nav-link'>Admin</a>
                 </li>
                 )}
 
                 <li className='nav-item'>
-                <Link to='/about' className='nav-link'>About</Link>
+                  <span className="text-backdrop">
+                    <Link to='/about' className='nav-link'>About</Link>
+                  </span>
                 </li>
                 <li className='nav-item'>
-                <Link to='/' className='nav-link'>Projects</Link>
+                  <span className="text-backdrop">
+                    <Link to='/' className='nav-link'>Projects</Link>
+                  </span>
                 </li>
                 <li className='nav-item'>
-                <Link to='/photography' className='nav-link'>Photography</Link>
+                  <span className="text-backdrop">
+                    <Link to='/photography' className='nav-link'>Photography</Link>
+                  </span>
                 </li>
-                
-              
-              </ul>
+                </ul>*/}
 
               </div>
             </div>
@@ -63,7 +70,7 @@ const TemplateWrapper = ({ children, data }) => {
 }
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func
+  children: PropTypes.object
 }
 
 const pageQuery = graphql`
