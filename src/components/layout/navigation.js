@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Container } from 'reactstrap'
-import PropTypes from 'prop-types'
+
+
 import Link from 'gatsby-link'
 
 export default class Navigation extends Component {
@@ -24,7 +24,7 @@ export default class Navigation extends Component {
     //let lastPart = window.location.href.substr(window.location.href.lastIndexOf('/') + 1)
     let urlEnding = window.location.pathname
 
-    let isPage = (urlEnding != "/")? true : false
+    let isPage = (urlEnding !== "/")? true : false
     let currentURL = isPage ? urlEnding.replace(/\//g, '') : "home"
 
     this.setState({

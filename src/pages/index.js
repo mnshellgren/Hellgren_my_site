@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Card, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
+import { Container, Card} from 'reactstrap'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Link from 'gatsby-link'

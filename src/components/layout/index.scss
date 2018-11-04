@@ -89,7 +89,9 @@
 // page-level layout
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro|Space+Mono:400,700|Work+Sans:400,500,600');
 
-
+html {
+  margin-left: calc(100vw - 100%);
+}
 .App {
   display: flex;
   flex-direction: column;
@@ -97,11 +99,17 @@
 
   & > .pageContent {
     flex: 1;
-    overflow: auto;
     padding-top: 10px;
   }
   p {
     font-family: 'Source Sans Pro', sans-serif;
+    &.text-roles {
+      font-family: 'Space mono', monospace;
+    }
+  }
+  h1,h2,h3,h4 {
+    font-family: 'Work Sans', sans-serif;
+    text-transform: initial;
   }
   
 }
@@ -111,6 +119,9 @@
 .navbar {
   font-weight: 400;
   text-transform: initial;
+  min-height: 40vh;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .nav-item {
   margin-left: 0;
@@ -144,6 +155,7 @@
 }
 .main-header {
   min-height: 40vh;
+  padding-bottom: 8px;
   .flex-wrapper {
     display: flex;
     width: 100%;
@@ -180,6 +192,9 @@
       height: 100%;
       visibility: hidden;
       transition: visibility 0.5s, opacity 0.5s;
+    }
+    &.photography {
+      height: 365px;
     }
     &:hover {
       .post-hover-info {
@@ -234,11 +249,12 @@
 }
 
 .text-body, .text-roles {
-  font-size: 16px;
+  font-size: 15px;
   color: #8a8585;
   font-family: 'Space Mono', monospace;
 }
 .text-roles {
+  font-family: 'Space mono', monospace;
   &:hover {
     cursor: default;
   }
