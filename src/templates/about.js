@@ -11,7 +11,7 @@ export default function Template ({ data }) {
       <div>
         <Helmet title={`${post.frontmatter.title} | ${data.site.siteMetadata.title}`} />
         
-        <Container style={{width: '80%'}} dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Container className="grid-base about" dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
   )
