@@ -189,7 +189,8 @@
   font-weight: 500;
   &:hover {
     text-decoration: none;
-    color: #fe7d7c;
+    color: #404B85;
+    cursor: default;
   }
 }
 
@@ -197,6 +198,11 @@
   font-size: 16px;
   color: #8a8585;
   font-family: 'Space Mono', monospace;
+}
+.text-roles {
+  &:hover {
+    cursor: default;
+  }
 }
 
 .padding-left-small {
