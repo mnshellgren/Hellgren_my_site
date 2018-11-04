@@ -2,16 +2,23 @@ import React from 'react'
 import { Container, Card, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.filter(post => !post.node.frontmatter.hidden && post.node.frontmatter.contentType === 'blog')
+  //let color = "background: "
   return (
     <Layout>
       <Container className="grid-base">
         {posts.map(({ node: post }) => (
-          <Card key={post.id}>
+          <Card key={post.id} className="post-card">
             <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes}/>
+            <Link to={post.frontmatter.path}>
+              <div className="post-hover-info" style={{backgroundColor: '#'+post.frontmatter.featuredColor}}>
+                <h3>{post.frontmatter.title}</h3>
+              </div>
+            </Link>
             {/*<CardBody>
               <CardTitle><Link to={post.frontmatter.path}>{post.frontmatter.title}</Link></CardTitle>
               <CardSubtitle style={{marginBottom: 10}}>{post.frontmatter.date}</CardSubtitle>
@@ -37,6 +44,7 @@ export const pageQuery = graphql`
             title
             contentType
             date(formatString: "MMMM DD, YYYY")
+            featuredColor
             featuredImage {
               childImageSharp{
                   sizes(maxWidth: 630) {
