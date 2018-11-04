@@ -21,6 +21,13 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/images`,
+        name: 'images'
+      }
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -31,6 +38,8 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-sharp`, 
+    `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-plugin-sass',
       options: {
