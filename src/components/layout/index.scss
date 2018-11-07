@@ -194,7 +194,7 @@ html {
       transition: visibility 0.5s, opacity 0.5s;
     }
     &.photography {
-      height: 365px;
+      max-height: 365px;
     }
     &:hover {
       .post-hover-info {

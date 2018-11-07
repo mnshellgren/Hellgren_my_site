@@ -29,7 +29,7 @@ export default function Template ({ data }) {
           </div>
         </Container>
 
-        <Container className="post-container" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Container className="" dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
   )
