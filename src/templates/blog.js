@@ -24,22 +24,12 @@ export default function Template ({ data }) {
         </Helmet>
         <Container>
           <div className="post-container">
-            <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes}/>
+            {/*<Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes}/>*/}
             <h1 className='display-3 post-heading'>{post.frontmatter.title}</h1>
           </div>
         </Container>
 
         <Container className="post-container" dangerouslySetInnerHTML={{ __html: post.html }} />
-
-        {post.frontmatter.attachments && (<Container><h4>Attachments</h4><CardGroup>
-          {post.frontmatter.attachments.map((attachment, i) => (
-            <Card key={i}>
-              <CardBody>
-                <CardTitle><a href={attachment.filename}>{basename(attachment.filename)}</a></CardTitle>
-              </CardBody>
-            </Card>
-          ))}
-        </CardGroup></Container>)}
       </div>
     </Layout>
   )
@@ -58,6 +48,7 @@ export const pageQuery = graphql`
       frontmatter {
         path
         date(formatString: "MMMM DD, YYYY")
+        title
         featuredColor
         featuredImage {
           childImageSharp{
@@ -65,13 +56,6 @@ export const pageQuery = graphql`
                 ...GatsbyImageSharpSizes
             }
           }
-        }
-        title
-        attachments {
-          filename
-        }
-        related {
-          post
         }
       }
     }
@@ -82,6 +66,14 @@ export const pageQuery = graphql`
           frontmatter{
             title
             path
+            featuredColor
+            featuredImage {
+              childImageSharp{
+                sizes(maxWidth: 1000) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }

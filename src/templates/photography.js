@@ -1,8 +1,7 @@
 import React from 'react'
-import { Container, Card, CardTitle, CardGroup, CardBody } from 'reactstrap'
+import { Container } from 'reactstrap'
 import Helmet from 'react-helmet'
 import { basename } from 'path'
-import Link from 'gatsby-link'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
@@ -14,7 +13,6 @@ const findNode = (path, data) => data.allMarkdownRemark.edges
 
 export default function Template ({ data }) {
   const { markdownRemark: post } = data
-  const related = post.frontmatter.related ? post.frontmatter.related.map(r => findNode(r.post, data)) : []
   return (
     <Layout>
       <div>
