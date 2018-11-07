@@ -91,7 +91,7 @@ export default class Navigation extends Component {
                 </li>
                 <li className='nav-item'>
                   <span className={this.isActive("projects")? "text-backdrop active" : "text-backdrop"}>
-                    <Link to='/' className="nav-link" onClick={() => this.setActive("projects")}>Projects</Link>
+                    <Link to='/' className="nav-link" onClick={() => this.setActive("projects")}>Experience</Link>
                   </span>
                 </li>
                 <li className='nav-item'>
