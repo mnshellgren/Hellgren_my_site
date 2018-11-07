@@ -2,6 +2,7 @@
 contentType: photography
 path: /aland
 title: aland
+date: 2018-10-29T17:13:33
 featuredColor: e92e3a
 featuredImage: "./aland.jpg"
 ---

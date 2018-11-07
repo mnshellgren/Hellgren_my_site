@@ -5,6 +5,8 @@ import { basename } from 'path'
 import Link from 'gatsby-link'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import Img from 'gatsby-image'
+
 
 // find a post title by path
 const findNode = (path, data) => data.allMarkdownRemark.edges
@@ -21,28 +23,19 @@ export default function Template ({ data }) {
         <Helmet title={`Blog | ${post.frontmatter.title}`}>
         </Helmet>
         <Container>
-          <h1 className='display-3'>{post.frontmatter.title}</h1>
+          <div className="post-container">
+            <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes}/>
+            <h1 className='display-3 post-heading'>{post.frontmatter.title}</h1>
+          </div>
         </Container>
 
-        <Container dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Container className="post-container" dangerouslySetInnerHTML={{ __html: post.html }} />
 
         {post.frontmatter.attachments && (<Container><h4>Attachments</h4><CardGroup>
           {post.frontmatter.attachments.map((attachment, i) => (
             <Card key={i}>
               <CardBody>
                 <CardTitle><a href={attachment.filename}>{basename(attachment.filename)}</a></CardTitle>
-              </CardBody>
-            </Card>
-          ))}
-        </CardGroup></Container>)}
-
-        {post.frontmatter.related && (<Container><h4>Related</h4><CardGroup>
-          {related.map((r, i) => (
-            <Card key={i}>
-              <CardBody>
-                <CardTitle>
-                  <Link to={r.path}>{r.title}</Link>
-                </CardTitle>
               </CardBody>
             </Card>
           ))}
@@ -65,6 +58,14 @@ export const pageQuery = graphql`
       frontmatter {
         path
         date(formatString: "MMMM DD, YYYY")
+        featuredColor
+        featuredImage {
+          childImageSharp{
+            sizes(maxWidth: 1000) {
+                ...GatsbyImageSharpSizes
+            }
+          }
+        }
         title
         attachments {
           filename

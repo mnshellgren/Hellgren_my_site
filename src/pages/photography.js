@@ -22,6 +22,9 @@ const PhotographyPage = ({ data }) => {
           </Card>
         ))}
       </Container>
+      <Container className="py-4">
+        <p>more phtotos can be found on my <a href="https://www.flickr.com/photos/mnshellgren/" target="_blank" rel="noopener">flickr page</a>.</p>
+      </Container>
     </Layout>
   )
 }

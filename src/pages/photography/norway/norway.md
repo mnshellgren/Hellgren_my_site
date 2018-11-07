@@ -2,6 +2,7 @@
 contentType: photography
 path: /norway
 title: norway
+date: 2018-10-30T17:13:33
 featuredColor: e92e3a
 featuredImage: "./norway_.jpg"
 ---

@@ -37,7 +37,7 @@ const TemplateWrapper = ({ children, data }) => {
               }
             },
             "color": {
-              "value": "#e1e1e1"
+              "value": "#404B85"
             },
             "shape": {
               "type": "triangle",
@@ -182,6 +182,11 @@ const TemplateWrapper = ({ children, data }) => {
           </Container>
         </div>
         <div className='pageContent'>{children}</div>
+        <footer>
+          <div className="container pt-5 pb-3 pl-4">
+            <p className="font-italic">Copyright 2018 Måns Hellgren</p>
+          </div>
+        </footer>
       </div>
     )} />
   )

@@ -2,6 +2,7 @@
 contentType: photography
 path: /alpedusuisi
 title: alpedisuisi
+date: 2018-10-28T17:13:33
 featuredColor: e92e3a
 featuredImage: "./alpedisuisi.jpg"
 ---
