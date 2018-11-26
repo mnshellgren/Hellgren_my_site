@@ -107,10 +107,22 @@ html {
       font-family: 'Space mono', monospace;
     }
   }
+  li {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
   h1,h2,h3,h4 {
     font-family: 'Work Sans', sans-serif;
     text-transform: initial;
   }
+
+  blockquote {
+    padding-left: 20px;
+    padding-right: 30px;
+    text-align: justify;
+    font-style: italic;
+  }
+
+
   
 }
 .nav-wrapper {
@@ -268,7 +280,12 @@ html {
 }
 
 .post-container {
-  width: 80%;
+  width: 100%;
+}
+.project-post {
+  p, li, blockquote {
+    font-size: 16px;
+  }
 }
 .padding-left-small {
   padding-left: 4px;
@@ -293,6 +310,11 @@ html {
   }
   .text-body, .text-roles {
     font-size: 14px;
+  }
+  .project-post {
+    p, li, blockquote {
+      font-size: 14px;
+    }
   }
   .grid-base {
     grid-template-columns: repeat(1, 1fr);

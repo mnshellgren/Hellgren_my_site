@@ -24,12 +24,12 @@ export default function Template ({ data }) {
         </Helmet>
         <Container>
           <div className="post-container">
-            {/*<Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes}/>*/}
+            <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes}/>
             <h1 className='display-3 post-heading'>{post.frontmatter.title}</h1>
           </div>
         </Container>
 
-        <Container className="" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Container className="project-post" dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
   )
