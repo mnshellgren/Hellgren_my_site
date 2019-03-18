@@ -145,7 +145,7 @@ const TemplateWrapper = ({ children, data }) => {
               
               <div className="title-container">
                 <span className="title-backdrop"><Link to='/' className='text-title'>{data.site.siteMetadata.title}</Link></span>
-                <p className="text-roles padding-left-small margin-top-xsmall">UX thinker <br></br> Web developer <br></br> Hobby photographer</p>
+                <p className="text-roles padding-left-small margin-top-xsmall">UX thinker <br></br> Web designer <br></br> Hobby photographer</p>
                 <p className="text-roles padding-left-small margin-top-small"> hej@hellgren.space <br></br>+46730573037</p>
               </div>
 
